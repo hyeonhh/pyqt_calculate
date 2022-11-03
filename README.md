@@ -1,6 +1,6 @@
 # pyqt_calculate
 This simple calculate based on PyQts
-GUI프로그래밍을 통한 00줄만에 계산기 만들기
+GUI프로그래밍을 통한 100줄만에 계산기 만들기
 
  ## requirements
    pyqt modules
@@ -10,6 +10,7 @@ GUI프로그래밍을 통한 00줄만에 계산기 만들기
 
  you should install pyqy5 
  -> pip install PyQt5
+
 
 
 ## Contributing
