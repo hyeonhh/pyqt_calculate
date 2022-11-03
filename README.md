@@ -8,6 +8,9 @@ GUI프로그래밍을 통한 00줄만에 계산기 만들기
  ## installation requirements
  python, pyqt5 
 
+ you should install pyqy5 
+ -> pip install PyQt5
+
 
 ## Contributing
 
