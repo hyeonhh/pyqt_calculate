@@ -1,5 +1,5 @@
 # pyqt_calculate
-This simple caculate based on PyQts
+This simple calculate based on PyQts
 
- requirements
+ ## requirements
 
