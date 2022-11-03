@@ -48,12 +48,7 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 이 행동 강령은 개인이 프로젝트 또는 커뮤니티를 대표할 때, 프로젝트 공간과 공공 장소 모두에 적용됩니다. 프로젝트 또는 커뮤니티를 대표하는 것은 공식 프로젝트 이메일 사용, 공식 소셜 미디어 계정을 통한 포스팅, 온라인 또는 오프라인에서의 행사에서 대표로 보여지는 행동을 포함합니다. 프로젝트의 대표는 메인테이너에 의해 향후 정의되어지고 명시될 수 있습니다.
 
-## Enforcement (시행)
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at designe@outlook.com. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
-Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project’s leadership.
-
-욕설, 희롱 또는 기타 용납 될 수 없는 행동은 designe@outlook.com 으로 리포트될 수 있습니다. 모든 불만 사항은 검토 및 조사될 수 있고, 상황에 따라 적절하다고 판단되는 대응을 취할 것입니다. 프로젝트 팀은 불만 사항을 알린 리포터에 관한 비밀을 유지할 의무가 있습니다. 특정 시행 정책에 대한 자세한 내용은 별도로 게시 될 수 있습니다.
 
 ## Attribution (속성)
 This Code of Conduct is adapted from the Contributor Covenant, version 1.4, available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
