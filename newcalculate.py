@@ -18,12 +18,15 @@ class Main(QDialog):
 
     ### layout_number 과 버튼을 담을 layout_part2 ###
         layout_part2 = QGridLayout()
-     
+
+
         self.setLayout(main_layout)
         self.resize(400, 400)
         self.show()
 
-    
+    ### main_layout 에 추가 ###
+        main_layout.addLayout(layout_operation_solution)
+
 if __name__ =='__main__':
     app = QApplication(sys.argv)
     main = Main()
