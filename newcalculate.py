@@ -54,9 +54,36 @@ class Main(QDialog):
         layout_part1.addWidget(button_division, 1, 3)
 
 
+         ### 숫자 버튼 추가 ###
+        num = {}
+        for number in range(0, 10):
+            num[number] = QPushButton(str(number))
+
+            if number > 0:
+                x, y = divmod(number - 1, 3)
+                # 3으로 나눴을 때 몫과 나머지에 따라 배치를 하면 된다.
+                if x == 0:
+                    layout_number.addWidget(num[number], 2, y)
+                    layout_part2.addWidget(num[number], 2, y)
+                elif x == 2:
+                    layout_number.addWidget(num[number], 0, y)
+                    layout_part2.addWidget(num[number], 0, y)
+                else:
+                    layout_number.addWidget(num[number], x, y)
+                    layout_part2.addWidget(num[number], x, y)
+
+            elif number == 0:
+                layout_number.addWidget(num[number], 3, 1)
+                layout_part2.addWidget(num[number], 3, 1)
+
+            
+
+    
+
         ### main_layout 에 추가 ###
         main_layout.addLayout(layout_operation_solution)
         main_layout.addLayout(layout_part1)
+        main_layout.addLayout(layout_part2)
   
         self.setLayout(main_layout)
         self.resize(400, 400)
