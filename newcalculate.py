@@ -83,7 +83,7 @@ class Main(QDialog):
             button_result = QPushButton("=")
             button_plus_minus = QPushButton("±")
             button_add_dot = QPushButton(".")
-
+            button_result.setStyleSheet('QPushButton {background-color: #A3C1DA; color: blue;}')
         ### 사칙연산버튼 (x , - , + =)과 +/- , .버튼 추가하기 ###
             layout_part2.addWidget(button_product, 0, 3)
             layout_part2.addWidget(button_minus, 1, 3)
