@@ -2,38 +2,69 @@ import sys
 import numpy as np
 from PyQt5.QtWidgets import *
 
+
 class Main(QDialog):
     def __init__(self):
         super().__init__()
         self.init_ui()
 
     def init_ui(self):
-        main_layout =QVBoxLayout()
+        main_layout = QVBoxLayout()
 
-     ###레이아웃 틀 잡기 ###
+        ## #레이아웃 틀 잡기 ###
 
         layout_operation_solution = QFormLayout()
         layout_part1 = QGridLayout()
         layout_number = QGridLayout()
 
-    ### layout_number 과 버튼을 담을 layout_part2 ###
+        ### layout_number 과 버튼을 담을 layout_part2 ###
         layout_part2 = QGridLayout()
 
-    ### 수식 입력 & 결과 가 나타나는 operation_solution 창 구현 ###
+        ### 수식 입력 & 결과 가 나타나는 operation_solution 창 구현 ###
         self.operation_solution = QLineEdit()
         layout_operation_solution.addRow("", self.operation_solution)
-        self.operation_solution.setSizePolicy(QSizePolicy.Expanding,QSizePolicy.Expanding)
+        self.operation_solution.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
-        
+        ### layout_part1에 버튼 추가 ###
+        ###나머지
+        button_remainder = QPushButton("%")
+        ### CE
+        button_clear_entry = QPushButton("CE")
+        ### C
+        button_clear = QPushButton("C")
+        ### backspace
+        button_backspace = QPushButton("←")
+        ### 1/x
+        button_reciprocal = QPushButton("¹/x")
+        ### 제곱
+        button_square = QPushButton("x²")
+        ### 제곱근
+        button_square_root = QPushButton("²√x")
+        ### 나누기
+        button_division = QPushButton("÷")
+
+
+        layout_part1.addWidget(button_remainder, 0, 0)
+        layout_part1.addWidget(button_clear_entry, 0, 1)
+        layout_part1.addWidget(button_clear, 0, 2)
+        layout_part1.addWidget(button_backspace, 0, 3)
+        layout_part1.addWidget(button_reciprocal, 1, 0)
+        layout_part1.addWidget(button_square, 1, 1)
+        layout_part1.addWidget(button_square_root, 1, 2)
+        layout_part1.addWidget(button_division, 1, 3)
+
+
+        ### main_layout 에 추가 ###
+        main_layout.addLayout(layout_operation_solution)
+        main_layout.addLayout(layout_part1)
+  
         self.setLayout(main_layout)
         self.resize(400, 400)
         self.show()
 
-    ### main_layout 에 추가 ###
-        main_layout.addLayout(layout_operation_solution)
 
-
-if __name__ =='__main__':
+if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
     sys.exit(app.exec_())
+
