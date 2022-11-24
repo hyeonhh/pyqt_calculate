@@ -13,7 +13,7 @@ class Main(QDialog):
         self.setLayout(main_layout)
         self.resize(400, 400)
         self.show()
-    
+
 
 if __name__ =='__main__':
     app = QApplication(sys.argv)
