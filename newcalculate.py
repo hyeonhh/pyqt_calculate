@@ -54,7 +54,7 @@ class Main(QDialog):
         layout_part1.addWidget(button_division, 1, 3)
 
 
-         ### 숫자 버튼 추가 ###
+         ### 숫자 버튼 추가 ###   
         num = {}
         for number in range(0, 10):
             num[number] = QPushButton(str(number))
