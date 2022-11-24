@@ -76,7 +76,21 @@ class Main(QDialog):
                 layout_number.addWidget(num[number], 3, 1)
                 layout_part2.addWidget(num[number], 3, 1)
 
-            
+        ### layout_part에 넣을 버튼 구성하기 ###
+            button_product = QPushButton("x")
+            button_minus = QPushButton("-")
+            button_plus = QPushButton("+")
+            button_result = QPushButton("=")
+            button_plus_minus = QPushButton("±")
+            button_add_dot = QPushButton(".")
+
+        ### 사칙연산버튼 (x , - , + =)과 +/- , .버튼 추가하기 ###
+            layout_part2.addWidget(button_product, 0, 3)
+            layout_part2.addWidget(button_minus, 1, 3)
+            layout_part2.addWidget(button_plus, 2, 3)
+            layout_part2.addWidget(button_result, 3, 3)
+            layout_part2.addWidget(button_plus_minus, 3, 0)
+            layout_part2.addWidget(button_add_dot, 3, 2)
 
     
 
