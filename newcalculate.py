@@ -2,6 +2,7 @@ import sys
 import numpy as np
 from PyQt5.QtWidgets import *
 
+
 class Main(QDialog):
     def __init__(self):
         super().__init__()
@@ -15,7 +16,8 @@ class Main(QDialog):
         self.show()
 
 
-if __name__ =='__main__':
+if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = Main()
     sys.exit(app.exec_())
+
