@@ -68,6 +68,7 @@ class Main(QDialog):
         button_backspace.clicked.connect(self.button_backspace_clicked)
         button_reciprocal.clicked.connect(self.button_reciprocal_clicked)
         button_clear.clicked.connect(self.button_clear_clicked)
+        button_clear_entry.clicked.connect(self.button_clear_entry_clicked)
         button_square.clicked.connect(self.button_square_clicked)
         button_square_root.clicked.connect(self.button_square_root_clicked)
        
@@ -76,6 +77,7 @@ class Main(QDialog):
         button_minus.clicked.connect(self.button_minus_clicked)
         button_product.clicked.connect(self.button_product_clicked)
         button_division.clicked.connect(self.button_division_clicked)
+        button_clear_entry.clicked.connect(self.button_clear_entry_clicked)
 
          ### 숫자 버튼 추가 ###
         num = {}
@@ -132,9 +134,12 @@ class Main(QDialog):
         operation_solution = operation_solution[:-1]
         self.operation_solution.setText(operation_solution)
     def number_button_clicked(self,num):
-        operation_solution = self.operation_solution.text()
-        operation_solution += str(num)
-        self.operation_solution.setText(operation_solution)
+        if self.operation_solution.text() =="0":
+            self.operation_solution.setText("")
+        else:
+            operation_solution = self.operation_solution.text()
+            operation_solution += str(num)
+            self.operation_solution.setText(operation_solution)
 
     def button_reciprocal_clicked(self):
         operation_solution = self.operation_solution.text()
@@ -150,7 +155,15 @@ class Main(QDialog):
         self.operation_solution.setText(str(operation_solution))
 
     def button_clear_clicked(self):
+        self.operation_solution.setText("0")
+
+    def button_clear_entry_clicked(self):
+        operation_solution = self.operation_solution.text()
+        x=''
+        for i in range(len(operation_solution)-1):
+            x+=operation_solution[i]
         self.operation_solution.setText("")
+        self.operation_solution.setText(str(x))
     
     def button_plus_clicked(self):
         operation_solution = self.operation_solution.text()
