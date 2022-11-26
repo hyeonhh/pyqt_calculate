@@ -58,6 +58,7 @@ class Main(QDialog):
         button_remainder.clicked.connect(self.button_remainder_clicked)
         button_backspace.clicked.connect(self.button_backspace_clicked)
         button_reciprocal.clicked.connect(self.button_reciprocal_clicked)
+        button_clear.clicked.connect(self.button_clear_clicked)
        
 
          ### 숫자 버튼 추가 ###
@@ -125,11 +126,14 @@ class Main(QDialog):
         operation_solution = self.operation_solution.text()
         operation_solution += str(num)
         self.operation_solution.setText(operation_solution)
-        
+
     def button_reciprocal_clicked(self):
         operation_solution = self.operation_solution.text()
         operation_solution = str(1/int(operation_solution))
         self.operation_solution.setText(operation_solution)
+    def button_clear_clicked(self):
+        self.operation_solution.setText("")
+
 
     
 
