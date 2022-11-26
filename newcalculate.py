@@ -155,10 +155,11 @@ class Main(QDialog):
         operation_solution=self.operation_solution.text()
         operation_solution = math.sqrt(int(operation_solution))
         self.operation_solution.setText(str(operation_solution))
-
+    ### C버튼은 현재까지 입력한 것을 다 지우기 
     def button_clear_clicked(self):
         self.operation_solution.setText("0")
 
+    ### CE 버튼은 현재 입력한 수만 지우는 기능
     def button_clear_entry_clicked(self):
         operation_solution = self.operation_solution.text()
         x=''
@@ -200,7 +201,8 @@ class Main(QDialog):
     
     def button_add_dot_clicked(self):
         operation_solution=self.operation_solution.text()
-        operation_solution+="."
+        if '.' not in operation_solution:
+            operation_solution+="."
         self.operation_solution.setText(str(operation_solution))
 
 
