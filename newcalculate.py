@@ -56,12 +56,15 @@ class Main(QDialog):
 
         #이벤트 추가하기
         button_remainder.clicked.connect(self.button_remainder_clicked)
-        button_backspace.clicked.connect(self.button_backspace_clicked)
+
         
          ### 숫자 버튼 추가 ###
         num = {}
         for number in range(0, 10):
             num[number] = QPushButton(str(number))
+            num[number].clicked.connect(lambda state, num = number:
+                                                       self.number_button_clicked(num))
+
 
             if number > 0:
                 x, y = divmod(number - 1, 3)
@@ -112,10 +115,6 @@ class Main(QDialog):
         operation_solution += "%"
         self.operation_solution.setText(operation_solution)
 
-    def button_backspace_clicked(self):
-        operation_solution = self.operation_solution.text()
-        operation_solution = operation_solution[:-1]
-        self.operation_solution.setText(operation_solution)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
