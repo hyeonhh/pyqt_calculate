@@ -53,6 +53,15 @@ class Main(QDialog):
         layout_part1.addWidget(button_square_root, 1, 2)
         layout_part1.addWidget(button_division, 1, 3)
 
+         ### layout_part에 넣을 버튼 구성하기 ###
+        button_product = QPushButton("x")
+        button_minus = QPushButton("-")
+        button_plus = QPushButton("+")
+        button_result = QPushButton("=")
+        button_plus_minus = QPushButton("±")
+        button_add_dot = QPushButton(".")
+        button_result.setStyleSheet('QPushButton {background-color: #A3C1DA; color: blue;}')
+
 
         #이벤트 추가하기
         button_remainder.clicked.connect(self.button_remainder_clicked)
@@ -62,6 +71,11 @@ class Main(QDialog):
         button_square.clicked.connect(self.button_square_clicked)
         button_square_root.clicked.connect(self.button_square_root_clicked)
        
+        ##사칙연산 이벤트 추가하기 
+        button_plus.clicked.connect(self.button_plus_clicked)
+        button_minus.clicked.connect(self.button_minus_clicked)
+        button_product.clicked.connect(self.button_product_clicked)
+        button_division.clicked.connect(self.button_division_clicked)
 
          ### 숫자 버튼 추가 ###
         num = {}
@@ -88,14 +102,7 @@ class Main(QDialog):
                 layout_number.addWidget(num[number], 3, 1)
                 layout_part2.addWidget(num[number], 3, 1)
 
-        ### layout_part에 넣을 버튼 구성하기 ###
-            button_product = QPushButton("x")
-            button_minus = QPushButton("-")
-            button_plus = QPushButton("+")
-            button_result = QPushButton("=")
-            button_plus_minus = QPushButton("±")
-            button_add_dot = QPushButton(".")
-            button_result.setStyleSheet('QPushButton {background-color: #A3C1DA; color: blue;}')
+       
         ### 사칙연산버튼 (x , - , + =)과 +/- , .버튼 추가하기 ###
             layout_part2.addWidget(button_product, 0, 3)
             layout_part2.addWidget(button_minus, 1, 3)
@@ -145,6 +152,25 @@ class Main(QDialog):
     def button_clear_clicked(self):
         self.operation_solution.setText("")
     
+    def button_plus_clicked(self):
+        operation_solution = self.operation_solution.text()
+        operation_solution += "+"
+        self.operation_solution.setText(operation_solution)
+    def button_minus_clicked(self):
+        operation_solution = self.operation_solution.text()
+        operation_solution += "-"
+        self.operation_solution.setText(operation_solution)
+    def button_product_clicked(self):
+        operation_solution = self.operation_solution.text()
+        operation_solution += "x"
+        self.operation_solution.setText(operation_solution)
+    def button_division_clicked(self):
+        operation_solution = self.operation_solution.text()
+        operation_solution += "÷"
+        self.operation_solution.setText(operation_solution)
+    
+
+        
 
 
     
