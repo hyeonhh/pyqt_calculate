@@ -72,6 +72,7 @@ class Main(QDialog):
         button_square.clicked.connect(self.button_square_clicked)
         button_square_root.clicked.connect(self.button_square_root_clicked)
         button_plus_minus.clicked.connect(self.button_plus_minus_clicked)
+        button_add_dot.clicked.connect(self.button_add_dot_clicked)
        
         ##사칙연산 이벤트 추가하기 
         button_plus.clicked.connect(self.button_plus_clicked)
@@ -197,11 +198,11 @@ class Main(QDialog):
                 operation_solution=float(operation_solution)*(-1)
         self.operation_solution.setText(str(operation_solution))
     
+    def button_add_dot_clicked(self):
+        operation_solution=self.operation_solution.text()
+        operation_solution+="."
+        self.operation_solution.setText(str(operation_solution))
 
-        
-
-
-    
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
