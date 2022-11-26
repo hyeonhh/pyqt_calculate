@@ -1,7 +1,7 @@
 import sys
 import numpy as np
 from PyQt5.QtWidgets import *
-
+import math
 
 class Main(QDialog):
     def __init__(self):
@@ -59,6 +59,8 @@ class Main(QDialog):
         button_backspace.clicked.connect(self.button_backspace_clicked)
         button_reciprocal.clicked.connect(self.button_reciprocal_clicked)
         button_clear.clicked.connect(self.button_clear_clicked)
+        button_square.clicked.connect(self.button_square_clicked)
+
        
 
          ### 숫자 버튼 추가 ###
@@ -131,8 +133,14 @@ class Main(QDialog):
         operation_solution = self.operation_solution.text()
         operation_solution = str(1/int(operation_solution))
         self.operation_solution.setText(operation_solution)
+    def button_square_clicked(self):
+        operation_solution=self.operation_solution.text()
+        operation_solution = math.pow(int(operation_solution),2)
+        self.operation_solution.setText(str(int(operation_solution)))
+
     def button_clear_clicked(self):
         self.operation_solution.setText("")
+    
 
 
     
