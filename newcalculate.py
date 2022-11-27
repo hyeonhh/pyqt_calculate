@@ -1,4 +1,5 @@
 import sys
+import re
 import numpy as np
 from PyQt5.QtWidgets import *
 import math
@@ -79,7 +80,6 @@ class Main(QDialog):
         button_minus.clicked.connect(self.button_minus_clicked)
         button_product.clicked.connect(self.button_product_clicked)
         button_division.clicked.connect(self.button_division_clicked)
-        button_clear_entry.clicked.connect(self.button_clear_entry_clicked)
 
          ### 숫자 버튼 추가 ###
         num = {}
@@ -160,14 +160,21 @@ class Main(QDialog):
         self.operation_solution.setText("0")
 
     ### CE 버튼은 현재 입력한 수만 지우는 기능
+        ##### 
     def button_clear_entry_clicked(self):
         operation_solution = self.operation_solution.text()
-        x=''
-        for i in range(len(operation_solution)-1):
-            x+=operation_solution[i]
-        self.operation_solution.setText("")
-        self.operation_solution.setText(str(x))
-    
+        numbers = re.split('([^0-9])',operation_solution)
+        del numbers[-1]
+        operation_solution = ''.join(s for s in numbers)
+        self.operation_solution.setText(operation_solution)
+
+        
+    def delete_last(self,my_list):
+        for i in range(len(my_list)):
+            print(my_list[i])
+        #del my_list[-1]
+          
+
     def button_plus_clicked(self):
         operation_solution = self.operation_solution.text()
         operation_solution += "+"
