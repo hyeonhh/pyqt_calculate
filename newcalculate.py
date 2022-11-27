@@ -74,6 +74,7 @@ class Main(QDialog):
         button_square_root.clicked.connect(self.button_square_root_clicked)
         button_plus_minus.clicked.connect(self.button_plus_minus_clicked)
         button_add_dot.clicked.connect(self.button_add_dot_clicked)
+        button_result.clicked.connect(self.button_result_clicked)
        
         ##사칙연산 이벤트 추가하기 
         button_plus.clicked.connect(self.button_plus_clicked)
@@ -178,11 +179,11 @@ class Main(QDialog):
         self.operation_solution.setText(operation_solution)
     def button_product_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "x"
+        operation_solution += "*"
         self.operation_solution.setText(operation_solution)
     def button_division_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "÷"
+        operation_solution += "/"
         self.operation_solution.setText(operation_solution)
     
     def button_plus_minus_clicked(self):
@@ -204,7 +205,19 @@ class Main(QDialog):
         if '.' not in operation_solution:
             operation_solution+="."
         self.operation_solution.setText(str(operation_solution))
-
+    def button_result_clicked(self):
+        operation_solution=self.operation_solution.text()
+        solution = eval(operation_solution)
+        self.operation_solution.setText(str(solution))
+        operation_solution = self.operation_solution.text()
+        #target ='+'
+        #index=-1
+        #while True:
+         #   index = operation_solution.find(target,index+1)
+          #  if index ==-1:
+           #     break
+            #print('+ is in =%d index' %index)
+            
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
