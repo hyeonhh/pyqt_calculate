@@ -160,19 +160,12 @@ class Main(QDialog):
         self.operation_solution.setText("0")
 
     ### CE 버튼은 현재 입력한 수만 지우는 기능
-        ##### 
     def button_clear_entry_clicked(self):
         operation_solution = self.operation_solution.text()
         numbers = re.split('([^0-9])',operation_solution)
         del numbers[-1]
         operation_solution = ''.join(s for s in numbers)
         self.operation_solution.setText(operation_solution)
-
-        
-    def delete_last(self,my_list):
-        for i in range(len(my_list)):
-            print(my_list[i])
-        #del my_list[-1]
           
 
     def button_plus_clicked(self):
