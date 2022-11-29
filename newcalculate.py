@@ -129,7 +129,7 @@ class Main(QDialog):
 
     def button_remainder_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "%"
+        operation_solution += " % "
         self.operation_solution.setText(operation_solution)
 
     def button_backspace_clicked(self):
@@ -171,19 +171,19 @@ class Main(QDialog):
 
     def button_plus_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "+"
+        operation_solution += " + "
         self.operation_solution.setText(operation_solution)
     def button_minus_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "-"
+        operation_solution += " - "
         self.operation_solution.setText(operation_solution)
     def button_product_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "*"
+        operation_solution += " * "
         self.operation_solution.setText(operation_solution)
     def button_division_clicked(self):
         operation_solution = self.operation_solution.text()
-        operation_solution += "/"
+        operation_solution += " / "
         self.operation_solution.setText(operation_solution)
     
     def button_plus_minus_clicked(self):
@@ -205,19 +205,48 @@ class Main(QDialog):
         if '.' not in operation_solution:
             operation_solution+="."
         self.operation_solution.setText(str(operation_solution))
+
+
     def button_result_clicked(self):
+        #operation_solution=self.operation_solution.text()
+        #solution = eval(operation_solution)
+        #self.operation_solution.setText(str(solution))
+        #operation_solution = self.operation_solution.text()
+
+
         operation_solution=self.operation_solution.text()
-        solution = eval(operation_solution)
-        self.operation_solution.setText(str(solution))
-        operation_solution = self.operation_solution.text()
-        #target ='+'
-        #index=-1
-        #while True:
-         #   index = operation_solution.find(target,index+1)
-          #  if index ==-1:
-           #     break
-            #print('+ is in =%d index' %index)
-            
+        operation_solution_list = operation_solution.split()
+
+        num_list=operation_solution_list[0::2]
+        ope_list=operation_solution_list[1::2]
+        res_list=[]
+
+        for i in range(len(num_list)-1):
+            if ope_list[i] =="+":
+                if i<len(num_list)-1:
+                    res = int(num_list[i])+int(num_list[i+1])
+                    num_list[i+1]=res
+                    print(num_list)
+            if ope_list[i] =="-":
+                if i<len(num_list)-1:
+                    res = int(num_list[i])-int(num_list[i+1])
+                    num_list[i+1]=res
+                    print(num_list)
+
+            if ope_list[i] =="*":
+                if i<len(num_list)-1:
+                    res = int(num_list[i])*int(num_list[i+1])
+                    num_list[i+1]=res
+                    print(num_list)
+
+            if ope_list[i] =="/":
+                if i<len(num_list)-1:
+                    res = int(num_list[i])/int(num_list[i+1])
+                    num_list[i+1]=res
+                    print(num_list)
+          
+        self.operation_solution.setText(str(num_list[len(num_list)-1]))
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
