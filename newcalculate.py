@@ -202,8 +202,7 @@ class Main(QDialog):
     
     def button_add_dot_clicked(self):
         operation_solution=self.operation_solution.text()
-        if '.' not in operation_solution:
-            operation_solution+="."
+        operation_solution+="."
         self.operation_solution.setText(str(operation_solution))
 
 
