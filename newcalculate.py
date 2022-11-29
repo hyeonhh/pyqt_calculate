@@ -214,25 +214,25 @@ class Main(QDialog):
         num_list=operation_solution_list[0::2]
         ope_list=operation_solution_list[1::2]
         res_list=[]
-        ### 소수점 연산 코드 추가하기 ***
+
         for i in range(len(num_list)-1):
             if ope_list[i] =="+":
-                if i<len(num_list)-1:
-                    res = int(num_list[i])+int(num_list[i+1])
+               if i<len(num_list)-1:
+                    res = float(num_list[i])+float(num_list[i+1])
                     num_list[i+1]=res
             if ope_list[i] =="-":
                 if i<len(num_list)-1:
-                    res = int(num_list[i])-int(num_list[i+1])
+                    res = float(num_list[i])-float(num_list[i+1])
                     num_list[i+1]=res
 
             if ope_list[i] =="*":
                 if i<len(num_list)-1:
-                    res = int(num_list[i])*int(num_list[i+1])
+                    res = float(num_list[i])*float(num_list[i+1])
                     num_list[i+1]=res
 
             if ope_list[i] =="/":
                 if i<len(num_list)-1:
-                    res = int(num_list[i])/int(num_list[i+1])
+                    res = float(num_list[i])/float(num_list[i+1])
                     num_list[i+1]=res
           
         self.operation_solution.setText(str(num_list[len(num_list)-1]))
