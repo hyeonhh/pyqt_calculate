@@ -215,6 +215,7 @@ class Main(QDialog):
         res_list=[]
 
         for i in range(len(num_list)-1):
+
             if ope_list[i] =="+":
                if i<len(num_list)-1:
                     res = float(num_list[i])+float(num_list[i+1])
@@ -232,6 +233,10 @@ class Main(QDialog):
             if ope_list[i] =="/":
                 if i<len(num_list)-1:
                     res = float(num_list[i])/float(num_list[i+1])
+                    num_list[i+1]=res
+            if ope_list[i] =="%":
+                if i<len(num_list)-1:
+                    res = float(num_list[i])%float(num_list[i+1])
                     num_list[i+1]=res
           
         self.operation_solution.setText(str(num_list[len(num_list)-1]))
