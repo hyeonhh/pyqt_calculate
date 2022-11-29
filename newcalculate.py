@@ -158,7 +158,7 @@ class Main(QDialog):
         self.operation_solution.setText(str(operation_solution))
     ### C버튼은 현재까지 입력한 것을 다 지우기 
     def button_clear_clicked(self):
-        self.operation_solution.setText("0")
+        self.operation_solution.setText("")
 
     ### CE 버튼은 현재 입력한 수만 지우는 기능
     def button_clear_entry_clicked(self):
@@ -208,42 +208,32 @@ class Main(QDialog):
 
 
     def button_result_clicked(self):
-        #operation_solution=self.operation_solution.text()
-        #solution = eval(operation_solution)
-        #self.operation_solution.setText(str(solution))
-        #operation_solution = self.operation_solution.text()
-
-
         operation_solution=self.operation_solution.text()
         operation_solution_list = operation_solution.split()
 
         num_list=operation_solution_list[0::2]
         ope_list=operation_solution_list[1::2]
         res_list=[]
-
+        ### 소수점 연산 코드 추가하기 ***
         for i in range(len(num_list)-1):
             if ope_list[i] =="+":
                 if i<len(num_list)-1:
                     res = int(num_list[i])+int(num_list[i+1])
                     num_list[i+1]=res
-                    print(num_list)
             if ope_list[i] =="-":
                 if i<len(num_list)-1:
                     res = int(num_list[i])-int(num_list[i+1])
                     num_list[i+1]=res
-                    print(num_list)
 
             if ope_list[i] =="*":
                 if i<len(num_list)-1:
                     res = int(num_list[i])*int(num_list[i+1])
                     num_list[i+1]=res
-                    print(num_list)
 
             if ope_list[i] =="/":
                 if i<len(num_list)-1:
                     res = int(num_list[i])/int(num_list[i+1])
                     num_list[i+1]=res
-                    print(num_list)
           
         self.operation_solution.setText(str(num_list[len(num_list)-1]))
 
