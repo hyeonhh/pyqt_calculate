@@ -1,6 +1,4 @@
 import sys
-import re
-import numpy as np
 from PyQt5.QtWidgets import *
 import math
 
