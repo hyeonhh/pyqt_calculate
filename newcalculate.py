@@ -158,22 +158,9 @@ class Main(QDialog):
     def button_clear_clicked(self):
         self.operation_solution.setText("")
 
-    ### CE 버튼은 현재 입력한 수만 지우는 기능
-
-    ####CE 기능을 C기능과 동일하게 수정하기 
-    # 수정 코드
     def button_clear_entry_clicked(self):
         operation_solution = self.operation_solution.text()
         self.operation_solution.setText("")
-        
-        #기존 코드
-        #operation_solution = self.operation_solution.text()
-        # numbers = re.split('([^0-9])',operation_solution)
-        # del numbers[-1]
-        # operation_solution = ''.join(s for s in numbers)
-        # self.operation_solution.setText(operation_solution)
-
-          
 
 
 
